@@ -15,5 +15,5 @@ import pytest
     "third_year",
     "old_pet"
 ])
-def test_get_human_age(cat_years, dog_years, result):
+def test_get_human_age(cat_years: int, dog_years: int, result: list) -> None:
     assert get_human_age(cat_years, dog_years) == result
