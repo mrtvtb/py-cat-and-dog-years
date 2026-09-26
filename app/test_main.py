@@ -12,6 +12,9 @@ import pytest
     (28, 28, [3, 2]),
     (100, 100, [21, 17]),
     (15, 24, [1, 2]),
+    (-1, 5, [0, 0]),
+    (5, -1, [0, 0]),
+    (-5, -5, [0, 0]),
 ], ids=[
     "zero_years",
     "fourteen_age",
@@ -22,6 +25,22 @@ import pytest
     "third_year",
     "old_pet",
     "mixed_years",
+    "negative_cat",
+    "negative_dog",
+    "both_negative",
 ])
 def test_get_human_age(cat_years: int, dog_years: int, result: list) -> None:
     assert get_human_age(cat_years, dog_years) == result
+
+
+def test_str_value():
+    with pytest.raises(TypeError):
+        get_human_age("3", 5)
+
+def test_None_value():
+    with pytest.raises(TypeError):
+        get_human_age(None, 5)
+
+def test_float_value():
+    with pytest.raises(TypeError):
+        get_human_age(4.5, 5)
