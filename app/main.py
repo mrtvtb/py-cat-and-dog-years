@@ -39,5 +39,5 @@ def get_human_age(cat_age: int, dog_age: int) -> list:
             return [0, 0]
     else:
         raise TypeError
-    
+
     return [cat_human, dog_human]

@@ -33,14 +33,16 @@ def test_get_human_age(cat_years: int, dog_years: int, result: list) -> None:
     assert get_human_age(cat_years, dog_years) == result
 
 
-def test_str_value():
+def test_str_value() -> None:
     with pytest.raises(TypeError):
         get_human_age("3", 5)
 
-def test_None_value():
+
+def test_none_value() -> None:
     with pytest.raises(TypeError):
         get_human_age(None, 5)
 
-def test_float_value():
+
+def test_float_value() -> None:
     with pytest.raises(TypeError):
         get_human_age(4.5, 5)
